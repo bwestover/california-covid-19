@@ -16,7 +16,7 @@ with open('covid19cases_test.csv') as cases_csv:
     data = [
             [
                 datetime.datetime.strptime(rows[0], "%Y-%m-%d"),
-                (int(float(rows[12])) / int(float(rows[3])))*100000
+                (int(float(rows[4])) / int(float(rows[3])))*100000
             ]
             for rows in cases_csv_reader
             if rows[0] and rows[1] == COUNTY
