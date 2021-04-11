@@ -9,14 +9,14 @@ with open('covid19cases_test.csv') as cases_csv:
     cases_csv_reader = csv.reader(cases_csv)
     # Data is from the California Health and Human Services portal - https://data.chhs.ca.gov/dataset/covid-19-time-series-metrics-by-county-and-state
     # Raw data headers
-    # date,area,area_type,population,cases,cumulative_cases,deaths,cumulative_deaths,total_tests,cumulative_total_tests,positive_tests,cumulative_positive_tests,reported_cases,cumulative_reported_cases,reported_deaths,cumulative_reported_deaths,reported_tests,cumulative_reported_tests
+    # DATE,AREA,AREA_TYPE,POPULATION,CASES,DEATHS,TOTAL_TESTS,POSITIVE_TESTS,REPORTED_CASES,REPORTED_DEATHS,REPORTED_TESTS
 
     # X Axis = Date converted to datetime
-    # Y Axis = Case count per 100K (reported_cases / population * 100,000)
+    # Y Axis = Case count per 100K (cases / population * 100,000)
     data = [
             [
                 datetime.datetime.strptime(rows[0], "%Y-%m-%d"),
-                (int(float(rows[4])) / int(float(rows[3])))*100000
+                (int(float(rows[4] or 0)) / int(float(rows[3] or 0)))*100000
             ]
             for rows in cases_csv_reader
             if rows[0] and rows[1] == COUNTY
