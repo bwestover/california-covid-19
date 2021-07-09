@@ -9,7 +9,7 @@ with open('covid19cases_test.csv') as cases_csv:
     cases_csv_reader = csv.reader(cases_csv)
     # Data is from the California Health and Human Services portal - https://data.chhs.ca.gov/dataset/covid-19-time-series-metrics-by-county-and-state
     # Raw data headers
-    # DATE,AREA,AREA_TYPE,POPULATION,CASES,DEATHS,TOTAL_TESTS,POSITIVE_TESTS,REPORTED_CASES,REPORTED_DEATHS,REPORTED_TESTS
+    #date,area,area_type,population,cases,cumulative_cases,deaths,cumulative_deaths,total_tests,cumulative_total_tests,positive_tests,cumulative_positive_tests,reported_cases,cumulative_reported_cases,reported_deaths,cumulative_reported_deaths,reported_tests
 
     # X Axis = Date converted to datetime
     # Y Axis = Case count per 100K (cases / population * 100,000)
