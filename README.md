@@ -19,5 +19,17 @@ $ python cases_plot.py "Sacramento"
 
 ![Example output](Sacramento-cases.png)
 
+```
+$ python deaths_plot.py "Sacramento"
+```
+
+![Example output](Sacramento-deaths.png)
+
+```
+$ python tests_plot.py "Sacramento"
+```
+
+![Example output](Sacramento-tests.png)
+
 ### Updating the data
 You can update the data by downloading a new CSV file from https://data.chhs.ca.gov/dataset/covid-19-time-series-metrics-by-county-and-state and replacing the `covid19cases_test.csv` file.
