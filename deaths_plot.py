@@ -12,11 +12,11 @@ with open('covid19cases_test.csv') as cases_csv:
     #date,area,area_type,population,cases,cumulative_cases,deaths,cumulative_deaths,total_tests,cumulative_total_tests,positive_tests,cumulative_positive_tests,reported_cases,cumulative_reported_cases,reported_deaths,cumulative_reported_deaths,reported_tests
 
     # X Axis = Date converted to datetime
-    # Y Axis = Death count per 100K (deaths / population * 100,000)
+    # Y Axis = Total deaths
     data = [
             [
                 datetime.datetime.strptime(rows[0], "%Y-%m-%d"),
-                (int(float(rows[6] or 0)) / int(float(rows[3] or 0)))*100000
+                int(float(rows[6] or 0))
             ]
             for rows in cases_csv_reader
             if rows[0] and rows[1] == COUNTY
@@ -24,10 +24,7 @@ with open('covid19cases_test.csv') as cases_csv:
 
 x = [row[0] for row in data]
 y = [row[1] for row in data]
-#DEBUG
-#print(x)
-#print(y)
 
-plt.title(f"Confirmed deaths per 100K for {COUNTY} county")
+plt.title(f"Confirmed deaths for {COUNTY} county")
 plt.bar(x, y)
 plt.show()
