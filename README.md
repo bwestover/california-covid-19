@@ -1,7 +1,6 @@
 # California COVID-19 Data
 
-
-This script uses matplotlib to graph confirmed cases per 100K for any California county.
+This script uses matplotlib to graph confirmed COVID-19 cases, deaths, and test positivity for any California county.
 
 ### Data sources
 The cases data comes from the CA Health and Human Services Data Portal
